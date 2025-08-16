@@ -1,4 +1,5 @@
 ![image](https://user-images.githubusercontent.com/103902448/164163511-37d22660-905c-4355-a6f4-91c6eee2d1a4.png)
+
 # Sangita Ganesh | Personal Website
 
 Source code for my personal website, where I share my work, interests, and projects.
@@ -26,4 +27,6 @@ Outside of work, I love traveling, exploring local food cultures, and baking tre
 
 
 ## Credits
+[![Template](https://img.shields.io/badge/Template-Unemployables-blue)](https://github.com/ndoherty-xyz/unemployables-portfolio-template)
+
 This website was built using the [Unemployables Portfolio Template](https://github.com/ndoherty-xyz/unemployables-portfolio-template)
