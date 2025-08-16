@@ -28,5 +28,5 @@ Outside of work, I love traveling, exploring local food cultures, and baking tre
 <br />
 ✨ *Exploring the intersection of software and biology — projects, research, and personal interests.*  
 <br /><br />
-Credit: Built from [unemployables-portfolio-template](https://github.com/ndoherty-xyz/unemployables-portfolio-template).
+Credit: Built from [unemployables-portfolio-template](https://github.com/ndoherty-xyz/unemployables-portfolio-template)
 <br />
