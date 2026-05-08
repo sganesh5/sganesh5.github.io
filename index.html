@@ -1,136 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-
-    <!-- 
-      TODO
-
-      Upload your Unemployable (or whatever photo you like) to the assets/images folder
-      and change the name of the image below to match the uploaded one
-
-      Change the title in the <title> tag to whatever you would like the title of your portfolio to be
-
-      This should be the same across all pages.
-     -->
-    <link rel="icon" href="./assets/images/IMG_0626.jpg" />
-		<title>Sangita Ganesh's portfolio</title>
-    <meta name="description" content="Sangita Ganesh's personal profile.">
+  <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sangita Ganesh's portfolio</title>
+    <meta name="description" content="Sangita Ganesh's personal profile." />
+    <link rel="icon" href="./assets/images/IMG_0626.jpg" />
 
-		<link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/typography.css">
-    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-		<script defer src="./js/script.js"></script>
-	</head>
-	<body>
-    <!-- NAVBAR -->
-    <div class="navbar">
-      <a class="nav-title-link" href="./index.html">
-        <!-- TODO - Change the "Portfolio Title" to whatever you want displayed in the top left -->
-        <span class="nav-title">Sangita Ganesh | Biology & Software</span>
-         <!-- TODO - Change the email after 'mailto:' to your email address for contact -->
-        <a class="button" href="mailto:sangitaganesh@gmail.com">
-          <span class="button-text">Contact Me</span>
-        </a>
+    <link rel="stylesheet" href="./css/typography.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/utilities.css" />
+
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefers = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored || (prefers ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+
+    <script defer src="./js/script.js"></script>
+  </head>
+  <body>
+    <header class="navbar" id="navbar">
+      <a class="nav-brand" href="#intro" aria-label="Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name">Sangita Ganesh</span>
       </a>
-    </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#intro" class="nav-link" data-nav="intro">Intro</a>
+        <a href="#about" class="nav-link" data-nav="about">About</a>
+        <a href="#contact" class="nav-link" data-nav="contact">Contact</a>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Toggle dark mode"
+          title="Toggle theme"
+        >
+          <svg
+            class="theme-icon icon-sun"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <line x1="12" y1="2" x2="12" y2="4" />
+            <line x1="12" y1="20" x2="12" y2="22" />
+            <line x1="2" y1="12" x2="4" y2="12" />
+            <line x1="20" y1="12" x2="22" y2="12" />
+            <line x1="4.93" y1="4.93" x2="6.34" y2="6.34" />
+            <line x1="17.66" y1="17.66" x2="19.07" y2="19.07" />
+            <line x1="4.93" y1="19.07" x2="6.34" y2="17.66" />
+            <line x1="17.66" y1="6.34" x2="19.07" y2="4.93" />
+          </svg>
+          <svg
+            class="theme-icon icon-moon"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+      </nav>
+    </header>
 
-    <!-- MAIN PAGE CONTENT -->
-    <div id="main-content">
-
-      <!-- PORTFOLIO HEADER -->
-      <div id="portfolio-header">
-        <div id="portfolio-header-image-container">
-          <!-- 
-            TODO
-
-            - Change the img "src" attribute to point to the Unemployable image you uploaded (or whatever image).
-            - Change the number to point to your Unemployable & replace the OpenSea link with your own
-            - If you aren't using an Unemployable as your image, remove the entire "a" element
-          -->
-          <img src="./assets/images/IMG_0626.jpg" class="portfolio-header-image">
-          <a class="no-underline" target="_blank" href="https://www.linkedin.com/in/sangitaganesh/">
-            <span class="image-caption">View my LinkedIn Profile</span>
-          </a>
+    <main>
+      <section id="intro" class="section hero">
+        <div class="hero-bg" aria-hidden="true">
+          <span class="blob blob-1"></span>
+          <span class="blob blob-2"></span>
+          <span class="grid-overlay"></span>
         </div>
 
-          <!-- 
-            TODO
-
-            - Change the main-title to whatver you want
-            - Change the body-text after that to a quick introduction to what you do
-            - Edit the button text if you feel like it. It will link to the projects section below.
-          -->
-        <div id="portfolio-header-text-container">
-            <div class="header-text">
-              <span class="main-title">Hey, I'm Sangita Ganesh.</span>
-              
-              <div class="body-text"><br>Bioinformaticist. Computational Biologist. <br> Software Engineer.</div>
+        <div class="container hero-grid">
+          <div class="hero-photo" data-reveal>
+            <div class="hero-photo-frame">
+              <img
+                src="./assets/images/IMG_0626.jpg"
+                alt="Photo of Sangita Ganesh"
+                class="portfolio-header-image"
+              />
             </div>
-            <a class="button" id="my-work-link" href="https://scholar.google.com/citations?user=_8pVmsEAAAAJ&hl=en">
-              <span class="button-text">Check out my publications</span> 
-              <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon"/>
-            </a>
-        </div>
-      </div>
+          </div>
 
-      <!-- ABOUT SECTION -->
-      <!-- 
-        TODO
-
-        - Change the subheader-text to whatever header you want
-        - Add paragraphs using the <div class="body-text"></div> elements in the "about-section-content"
-      -->
-      <div id="about-section">
-        <span class="subheader-text">About Me</span>
-        <div class="about-section-content">
-          <div class="body-text">I’m deeply passionate about using software to explore and solve problems in biology. Over the years, I’ve had the opportunity to build tools that support research in areas ranging from human genetics to synthetic biology and environmental microbiology.</div>
-          <div class="body-text">My journey started with a strong foundation in biology, and along the way I developed a love for software engineering. Bringing these two worlds together has given me a unique perspective: I understand the complexity and nuance of biological systems, and I know how to design software that can make those complexities more approachable. For me, writing code isn’t just about technology—it’s about enabling discovery and helping researchers push the boundaries in biology.</div>
-          <div class="body-text">Outside of work, I love traveling and discovering new places—especially through their food. Exploring local culinary scenes is one of my favorite ways to connect with different cultures. When I’m at home, I bring that passion into my own kitchen, where I enjoy baking and sharing homemade treats.</div>
+          <div class="hero-text">
+            <h1 class="main-title" data-reveal style="--delay: 80ms">
+              Hey, I'm <span class="accent-text">Sangita Ganesh</span>.
+            </h1>
+            <p class="lead" data-reveal style="--delay: 160ms">
+              Bioinformaticist &middot; Computational Biologist &middot; Software Engineer
+            </p>
+            <div class="hero-ctas" data-reveal style="--delay: 320ms">
+              <a
+                class="button button-primary"
+                id="my-work-link"
+                target="_blank"
+                rel="noopener"
+                href="https://scholar.google.com/citations?user=_8pVmsEAAAAJ&hl=en"
+              >
+                <svg
+                  class="button-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M7 3h8l4 4v14H7z" />
+                  <path d="M15 3v4h4" />
+                  <path d="M10 13h6" />
+                  <path d="M10 17h4" />
+                </svg>
+                <span class="button-text">View my publications</span>
+              </a>
+              <a
+                class="button button-primary"
+                target="_blank"
+                rel="noopener"
+                href="https://www.linkedin.com/in/sangitaganesh/"
+              >
+                <svg class="button-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zM6.814 20.452H3.86V9h2.954v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+                <span class="button-text">LinkedIn</span>
+              </a>
+            </div>
+          </div>
         </div>
-        <br>
-        <a class="button" href="./assets/files/SANGITA GANESH - CV_website.pdf">
-          <span class="button-text">View my Resume</span>
-          <image src="./assets/icons/arrow-right.svg" class="right-arrow-icon" />
+
+        <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+          <span class="scroll-cue-line"></span>
+          <span class="scroll-cue-text">Scroll</span>
         </a>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container">
+          <header class="section-header" data-reveal>
+            <span class="eyebrow muted-eyebrow">02 &mdash; About</span>
+            <h2 class="section-title">About Me</h2>
+          </header>
+          <div class="about-grid">
+            <p class="body-text lead-quote" data-reveal style="--delay: 60ms">
+              I'm deeply passionate about using software to explore and solve problems in
+              biology. Over the years, I've had the opportunity to build tools that support
+              research in areas ranging from human genetics to synthetic biology and
+              environmental microbiology.
+            </p>
+            <p class="body-text" data-reveal style="--delay: 120ms">
+              My journey started with a strong foundation in biology, and along the way I
+              developed a love for software engineering. Bringing these two worlds together
+              has given me a unique perspective: I understand the complexity and nuance of
+              biological systems, and I know how to design software that can make those
+              complexities more approachable. For me, writing code isn't just about
+              technology &mdash; it's about enabling discovery and helping researchers push
+              the boundaries in biology.
+            </p>
+            <p class="body-text" data-reveal style="--delay: 180ms">
+              Outside of work, I love traveling and discovering new places &mdash; especially
+              through their food. Exploring local culinary scenes is one of my favorite ways
+              to connect with different cultures. When I'm at home, I bring that passion into
+              my own kitchen, where I enjoy baking and sharing homemade treats.
+            </p>
+          </div>
+          <div data-reveal style="--delay: 240ms">
+            <a
+              class="button button-primary"
+              target="_blank"
+              rel="noopener"
+              href="./assets/files/SANGITA GANESH - CV_website.pdf"
+            >
+              <span class="button-text">View my resume</span>
+              <svg
+                class="button-arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <a href="#contact" class="scroll-cue" aria-label="Scroll to Contact">
+          <span class="scroll-cue-line"></span>
+          <span class="scroll-cue-text">Scroll</span>
+        </a>
+      </section>
+
+      <section id="contact" class="section section-contact">
+        <div class="container">
+          <header class="section-header" data-reveal>
+            <span class="eyebrow muted-eyebrow">03 &mdash; Contact</span>
+            <h2 class="section-title">Let's connect</h2>
+            <p class="body-text section-blurb">
+              Always happy to chat about biology, software, or your favorite bakery find.
+            </p>
+          </header>
+
+          <div class="contact-grid">
+            <a
+              class="contact-card"
+              href="mailto:sangitaganesh@gmail.com"
+              aria-label="Email"
+              data-reveal
+              style="--delay: 0ms"
+            >
+              <span class="contact-card-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  ></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
+            </a>
+
+            <a
+              class="contact-card"
+              target="_blank"
+              rel="noopener"
+              href="https://github.com/sganesh5"
+              aria-label="GitHub"
+              data-reveal
+              style="--delay: 80ms"
+            >
+              <span class="contact-card-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57 4.77-1.59 8.205-6.085 8.205-11.385 0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+              </span>
+            </a>
+
+            <a
+              class="contact-card"
+              target="_blank"
+              rel="noopener"
+              href="https://www.linkedin.com/in/sangitaganesh/"
+              aria-label="LinkedIn"
+              data-reveal
+              style="--delay: 160ms"
+            >
+              <span class="contact-card-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 1 1 2.063 2.065zM6.814 20.452H3.86V9h2.954v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                  />
+                </svg>
+              </span>
+            </a>
+
+            <a
+              class="contact-card"
+              target="_blank"
+              rel="noopener"
+              href="https://x.com/sangitaganesh05"
+              aria-label="X / Twitter"
+              data-reveal
+              style="--delay: 240ms"
+            >
+              <span class="contact-card-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="container footer-content">
+        <span class="footer-text">&copy; <span id="year"></span> Sangita Ganesh</span>
+        <span class="footer-text muted-text">
+          Made with care &middot; Hosted on GitHub Pages
+        </span>
       </div>
-
-
-    <!-- FOOTER -->
-    <div id="footer">
-      <!-- 
-        TODO - Change href to your Instagram account (can also delete entire "a" element if no Instagram) 
-
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="https://github.com/sganesh5">
-        <image src="./assets/icons/github-circ.svg" class="footer-icon"/>
-      </a>
-
-      <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/sangitaganesh/">
-        <image src="./assets/icons/linkedin-circ.svg" class="footer-icon"/>
-      </a>
-      <!-- 
-        TODO - Change href to your Twitter account (can also delete entire "a" element if no Twitter) 
-      
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" target="_blank" href="https://x.com/sangitaganesh05">
-        <image src="./assets/icons/twitter.png" class="footer-icon"/>
-      </a>
-      <!-- 
-        TODO - Change the email after "mailto" to your contact email 
-      
-        This should be the same across all pages.
-      -->
-      <a class="icon-link" href="mailto:sangitaganesh@gmail.com">
-        <image src="./assets/icons/mail.svg" class="footer-icon"/>
-      </a>
-
-      
-    </div>
-
-	</body>
+    </footer>
+  </body>
 </html>
