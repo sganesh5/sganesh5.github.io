@@ -56,7 +56,7 @@
   document.querySelectorAll('.nav-link[data-nav]').forEach(function (link) {
     navLinkMap.set(link.getAttribute('data-nav'), link);
   });
-  const sections = ['intro', 'about', 'contact']
+  const sections = ['intro', 'about', 'impact', 'contact']
     .map(function (id) {
       return document.getElementById(id);
     })

@@ -163,7 +163,7 @@ main {
   transform: translateY(-4px);
 }
 
-.portfolio-header-image {
+.hero-image {
   width: 100%;
   height: 100%;
   aspect-ratio: 4 / 5;
@@ -172,48 +172,14 @@ main {
   transition: transform var(--transition-slow);
 }
 
-.hero-photo:hover .portfolio-header-image {
+.hero-photo:hover .hero-image {
   transform: scale(1.03);
-}
-
-.image-caption-link {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 500;
-  padding: 4px 2px;
-  transition: color var(--transition);
-}
-
-.image-caption-link .arrow-glyph {
-  transition: transform var(--transition);
-}
-
-.image-caption-link:hover {
-  color: var(--accent);
-}
-
-.image-caption-link:hover .arrow-glyph {
-  transform: translateX(3px);
 }
 
 .hero-text {
   display: flex;
   flex-direction: column;
   gap: 22px;
-}
-
-.hero-text .eyebrow {
-  color: var(--accent);
-}
-
-.hero-sub {
-  color: var(--muted);
-  max-width: 540px;
 }
 
 .hero-ctas {
@@ -310,6 +276,44 @@ main {
   border-left: 3px solid var(--accent);
 }
 
+/* Impact */
+
+.section-impact {
+  background: linear-gradient(
+    180deg,
+    transparent,
+    color-mix(in oklab, var(--accent) 4%, transparent) 50%,
+    transparent
+  );
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.impact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 28px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid color-mix(in oklab, var(--accent) 55%, var(--card-hover-border));
+  background: transparent;
+  text-align: center;
+  transition: transform var(--transition), border-color var(--transition),
+    background var(--transition);
+}
+
+.impact-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: color-mix(in oklab, var(--accent) 10%, transparent);
+}
+
 /* Contact */
 
 .section-contact {
@@ -335,10 +339,9 @@ main {
   border: 1px solid color-mix(in oklab, var(--accent) 55%, var(--card-hover-border));
   text-decoration: none;
   color: var(--accent);
-  box-shadow: none;
   overflow: hidden;
   transition: transform var(--transition), border-color var(--transition),
-    box-shadow var(--transition), background var(--transition), color var(--transition);
+    background var(--transition), color var(--transition);
 }
 
 .contact-card::before {
@@ -364,7 +367,6 @@ main {
   transform: translateY(-3px);
   border-color: var(--accent);
   background: color-mix(in oklab, var(--accent) 14%, transparent);
-  box-shadow: none;
 }
 
 .contact-card:hover::before {
@@ -393,35 +395,6 @@ main {
   height: 18px;
 }
 
-.contact-card-text {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  flex: 1;
-  min-width: 0;
-}
-
-.contact-card-label {
-  color: var(--muted);
-}
-
-.contact-card-value {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.contact-card-arrow {
-  color: var(--muted);
-  font-size: 18px;
-  transition: transform var(--transition), color var(--transition);
-}
-
-.contact-card:hover .contact-card-arrow {
-  transform: translateX(4px);
-  color: var(--accent);
-}
-
 /* Responsive */
 
 @media (max-width: 980px) {
@@ -434,7 +407,7 @@ main {
     padding-top: calc(var(--nav-height) + 32px);
     padding-bottom: 80px;
   }
-  .portfolio-header-image {
+  .hero-image {
     aspect-ratio: 1 / 1;
     max-height: 60vh;
   }
@@ -460,6 +433,9 @@ main {
     margin-bottom: 40px;
   }
   .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .impact-grid {
     grid-template-columns: 1fr;
   }
   .hero-ctas {
